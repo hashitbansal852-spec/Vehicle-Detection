@@ -1,40 +1,59 @@
-🚗 Built My Own Vehicle Detection System Using YOLO!
+# 🚗 Vehicle Detection System Using YOLO
 
-After spending quite a lot of time experimenting with YOLO, datasets, training, and debugging, I'm finally excited to share another Computer Vision project!
+A custom vehicle detection system built using **YOLO11, Python, and OpenCV**.
 
-I built a vehicle detection system capable of detecting:
+The system detects different types of vehicles in images and videos and was trained using the **BDD100K dataset**.
 
-🚗 Cars
-🚚 Trucks
-🚌 Buses
-🏍️ Motorcycles
-🚲 Bicycles
+## 🚀 Features
 
-For this project, I worked with the BDD100K dataset, converted its annotations into YOLO format, prepared the dataset, and trained a custom YOLO11n model.
+- Real-time vehicle detection
+- Video-based vehicle detection
+- Detects 5 vehicle categories:
+  - 🚗 Car
+  - 🚚 Truck
+  - 🚌 Bus
+  - 🏍️ Motorcycle
+  - 🚲 Bicycle
+- Custom YOLO11n training
+- OpenCV-based video processing
+- GPU/CUDA accelerated training
 
-🛠️ Technologies Used
-• Python
-• YOLO11
-• OpenCV
-• BDD100K
-• CUDA / GPU
+## 🛠️ Technologies Used
 
-One of the most interesting parts of this project was testing the model on an actual traffic video instead of only looking at training metrics.
+- Python
+- YOLO11 (Ultralytics)
+- OpenCV
+- BDD100K Dataset
+- CUDA
+- PyTorch
 
-📊 Final Model Results
-• mAP50: 55.7%
-• mAP50-95: 35.6%
-• Car mAP50: 80.4%
+## 📊 Model Performance
 
-The model still has room for improvement, especially with motorcycles and bicycles, but getting from a raw dataset all the way to a working real-time/video detection system taught me a lot about how object detection actually works.
+The final model was trained at **960×960 image resolution**.
 
-The project involved a LOT of experimenting, debugging and, honestly, waiting for the GPU to finish training 😂
+| Metric | Result |
+|---|---:|
+| mAP50 | **55.7%** |
+| mAP50-95 | **35.6%** |
+| Car mAP50 | **80.4%** |
+| Truck mAP50 | **61.8%** |
+| Bus mAP50 | **60.3%** |
+| Motorcycle mAP50 | **34.5%** |
+| Bicycle mAP50 | **41.5%** |
 
-But that's exactly what made finishing it satisfying.
+The model performs particularly well on car detection, while motorcycle and bicycle detection still have room for improvement.
 
-🔗 GitHub Repository:
-[PASTE YOUR GITHUB REPOSITORY LINK HERE]
+## 📂 Dataset
 
-🚀 Another project completed. Onto the next one!
+The project uses the **BDD100K** dataset.
 
-#Python #YOLO #ComputerVision #AI #MachineLearning #OpenCV #ObjectDetection #DeepLearning
+The original BDD100K annotations are provided in JSON format. They were converted into YOLO-compatible `.txt` annotation files.
+
+The project uses the following classes:
+
+```text
+0 → car
+1 → truck
+2 → bus
+3 → motor
+4 → bike
